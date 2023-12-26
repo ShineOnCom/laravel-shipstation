@@ -68,11 +68,6 @@ class ShipStation
 
         $this->base_uri = $apiURL;
 
-        $app = new Container();
-        $app->singleton('app', 'Illuminate\Container\Container');
-
-        Facade::setFacadeApplication($app);
-
         $client = Http::baseUrl($this->base_uri)
             ->withBasicAuth($apiKey, $apiSecret);
 
